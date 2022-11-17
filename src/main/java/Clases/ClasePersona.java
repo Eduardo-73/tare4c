@@ -15,7 +15,7 @@ public class ClasePersona {
     private String nombre;
     private int edad;
     private char sexo;
-    final private String NIF;
+    private final String NIF;
     private double peso;//Kg
     private double altura;//cm
 
@@ -24,8 +24,12 @@ public class ClasePersona {
         this.edad = edad;
         this.sexo = asignarSexo(sexo);
         this.NIF = generarNIF();
-        this.peso = calcularIMC();
+        this.peso = peso;
         this.altura = altura;
+    }
+
+    public ClasePersona() {
+        this.NIF=generarNIF();
     }
 
     public void darLike(Serie serie){
@@ -41,15 +45,17 @@ public class ClasePersona {
     }
 
     private String generarNIF() {
-        String numeronif;
-        
+        String numeronif, letra;
+        int numero;
         String[] letraNIF = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
         numeronif = RandomStringUtils.randomNumeric(8);
-        
+        numero = Integer.parseInt(numeronif);
+        letra = letraNIF [numero % 23];
+        numeronif = numeronif.concat(letra);
         return numeronif;
     }
 
-    public boolean esMayorEdad(){
+    public boolean esMayorEdad(){  
         return this.edad>=18;
     }
     
@@ -95,6 +101,10 @@ public class ClasePersona {
 
     public void setAltura(double altura) {
         this.altura = altura;
+    }
+
+    public String getNIF() {
+        return NIF;
     }
 
      @Override

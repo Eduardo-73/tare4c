@@ -5,8 +5,8 @@
 package Clases;
 
 /**
- * Titulo, Género{"Acción", "comedia", "Scifi", "Drama"}, sinopsis,
- * Nºtemporadas, productor
+ * 
+ * 
  */
 //Declaración de la clase
 public class Serie {
