@@ -27,10 +27,10 @@ public class ClasePersona {
         this.peso = calcularIMC();
         this.altura = altura;
     }
-//
-//    public void darLike(Serie serie){
-//           serie.darLike();
-//    }
+
+    public void darLike(Serie serie){
+           serie.darLike();
+    }
     private boolean filtrarSexo(char sexo) {
         return (sexo == 'H' || sexo == 'M' || sexo == 'O');
     }
@@ -41,10 +41,12 @@ public class ClasePersona {
     }
 
     private String generarNIF() {
-        String nif;
+        String numeronif;
+        
         String[] letraNIF = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
-        nif = RandomStringUtils.randomNumeric(9);
-        return nif;
+        numeronif = RandomStringUtils.randomNumeric(8);
+        
+        return numeronif;
     }
 
     public boolean esMayorEdad(){
