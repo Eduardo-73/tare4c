@@ -67,9 +67,7 @@ public class Alquileres {
         return fechaInicio;
     }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
+ 
 
     @Override
     public String toString() {

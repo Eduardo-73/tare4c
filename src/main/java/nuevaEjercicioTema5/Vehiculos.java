@@ -70,5 +70,13 @@ public class Vehiculos {
     public String getBastidor() {
         return bastidor;
     }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
     
 }

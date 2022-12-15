@@ -4,21 +4,23 @@
  */
 package nuevaEjercicioTema5;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
+ * RegistrarCliente registraVehiculo buscarCliente BuscarVehiculos
+ * registrarAlquiler(fecha, nºdescripción) recibirVehiculos(Alquiler a)
  *
  * @author eduardo
  */
 public class Empresa {
-    
+
     private String cif;
     private String nombre;
-    private CatalogosVehiculos catalogoVehiculo; 
+    private CatalogosVehiculos catalogoVehiculo;
     private CatalogoCliente catalogoCliente;
     private CatalogoAlquiler catalogoAlquiler;
 
-    
     public Empresa(String cif, String nombre) {
         this.cif = cif;
         this.nombre = nombre;
@@ -26,6 +28,40 @@ public class Empresa {
 
     public Empresa() {
     }
+
+    public void registrarCliente(Cliente c) {
+        this.catalogoCliente.anadirCliente(c);
+    }
+    
+    public Cliente buscarCliente (String nif){
+        return this.catalogoCliente.buscarCliente(nif);
+    }
+
+    public void registrarVehiculo(Vehiculos v) {
+        this.catalogoVehiculo.anadirVehiculo(v);
+    }
+    
+    public Vehiculos buscarVehiculo (String bastidor){
+        return this.catalogoVehiculo.buscarVehiculos(bastidor);
+    }
+    
+    public boolean registrarAlquiler(String nif, String bastidor, LocalDate fechainicio, int dias){
+        Cliente auxCli  = this.catalogoCliente.buscarCliente(nif);
+        Vehiculos auxVe = this.catalogoVehiculo.buscarVehiculos(bastidor);
+        if(auxCli != null && auxVe != null && auxVe.isDisponible() == true){
+            this.catalogoAlquiler.anadirAlquiler(new Alquileres(auxCli, auxVe, fechainicio, dias));
+            auxVe.setDisponible(false);
+            return true;
+        }
+        return false;
+    }
+    
+    public void recibirVehiculos (Vehiculos v){
+        
+        v.ge
+    }
+    
+    
 
     public String getCif() {
         return cif;
@@ -105,7 +141,5 @@ public class Empresa {
         }
         return Objects.equals(this.nombre, other.nombre);
     }
-    
-    
-    
+
 }

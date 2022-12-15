@@ -15,8 +15,6 @@ public class CatalogoCliente {
     private int numeroClientes;
     private Cliente[] listaClientes;
 
-    //El constructor recibe el tamaño del catálogo e 
-    //Inicializa la estructura de datos con vehiculos aleatorios.
     public CatalogoCliente(int numClientes) {
         numClientes = Math.abs(numClientes);
         this.numeroClientes = numClientes;
@@ -26,11 +24,6 @@ public class CatalogoCliente {
         }
     }
 
-//    public void mostrarCatalogo() {
-//        for (Vehiculos v : listaVehiculos) {
-//            System.out.println(v);
-//        }
-//    }
     public String toString() {
         String tmp = "";
 
