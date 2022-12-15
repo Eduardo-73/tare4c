@@ -6,6 +6,7 @@ package nuevaEjercicioTema5;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import org.apache.commons.lang3.RandomStringUtils;
 
 /**
  * RegistrarCliente registraVehiculo buscarCliente BuscarVehiculos
@@ -56,9 +57,9 @@ public class Empresa {
         return false;
     }
     
-    public void recibirVehiculos (Vehiculos v){
+    public void recibirVehiculos (Alquileres a){
         
-        v.ge
+        a.getArquileID();
     }
     
     
