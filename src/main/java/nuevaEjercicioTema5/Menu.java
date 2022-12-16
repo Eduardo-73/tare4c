@@ -17,8 +17,8 @@ public class Menu {
         
         Empresa e = new Empresa("546751231", "CarGlass");
         System.out.println(e);
-        e.registrarCliente("Pepe");
-        e.registrarVehiculo("Seat");
+        
+        
     }
 
 }

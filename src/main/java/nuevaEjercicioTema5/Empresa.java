@@ -59,11 +59,11 @@ public class Empresa {
     
     public void recibirVehiculos (Alquileres a){
         
-        a.getArquileID();
+        if(this.catalogoVehiculo.buscarVehiculos(cif)!= null){
+            a.getVehiculo().setDisponible(true);
+        }
     }
     
-    
-
     public String getCif() {
         return cif;
     }
