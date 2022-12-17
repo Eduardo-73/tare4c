@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package nuevaEjercicioTema5;
+package Empresa;
 
 import java.util.Objects;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -27,6 +27,8 @@ public class Cliente {
     public Cliente (){
         this.nombre=RandomStringUtils.randomAlphabetic(5);
         this.apellido=RandomStringUtils.randomAlphabetic(9);
+        contador++;
+        this.nif = String.valueOf(contador);
     }
 
     public String getNombre() {

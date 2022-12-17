@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package nuevaEjercicioTema5;
+package Empresa;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -31,6 +31,11 @@ public class Alquileres {
     }
 
     public Alquileres() {
+        contador++;
+        this.arquileID = contador;
+        this.cliente = new Cliente();
+        this.vehiculo = new Vehiculos();
+        this.fechaInicio = LocalDate.now();
     }
 
     public int getArquileID() {
